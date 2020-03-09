@@ -1,7 +1,7 @@
 import unittest
-from twentyfortyeight import goDown, goUp, goLeft, goRight, sortZeroesToLeftAndMerge, sortZeroesToRightAndMerge
+from twentyfortyeight import goDown, goUp, goLeft, goRight, sortNonZeroValuesToTheLeftAndMerge, sortNonZeroValuesToTheRightAndMerge
 
-# Comment out line 95-102 in twentyfortyeight.py before running tests.
+# Comment out input section at the bottom of twentyfortyeight.py before running tests.
 
 grid1 = [[0 for i in range(4)] for j in range(4)]
 grid2 = [[0 for i in range(4)] for j in range(4)]

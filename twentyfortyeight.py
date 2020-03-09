@@ -25,9 +25,10 @@ def transpose(l1):
     return l2
 
 
-def sortZeroesToRightAndMerge(grid):
+def sortNonZeroValuesToTheRightAndMerge(grid):
     '''
-    Sort values so that zero is on the right side and values are merged once.
+   Sort non-zero values to the right side, and zeros to the left. Merge once afterwards.
+   As an example, the row [2, 0, 2, 0] will be sorted to [0, 0, 2, 2] and then merged to be [0, 0, 0, 4].
     '''
     for i in range(len(grid)):
         for j, _ in reversed(list(enumerate(grid[i]))):
@@ -41,9 +42,11 @@ def sortZeroesToRightAndMerge(grid):
     return grid
 
 
-def sortZeroesToLeftAndMerge(grid):
+def sortNonZeroValuesToTheLeftAndMerge(grid):
     '''
-    Sort values so that zero comes to the left and values are merged once.
+    Sort non-zero values to the left, and zeros to the right. Merge once afterwards.
+    As an example, the row [0, 2, 2, 0] will be sorted to [2, 2, 0, 0] and then merged to be [4, 0, 0, 0].
+
     '''
     for i in range(len(grid)):
         for j in range(len(grid[i])):
@@ -57,25 +60,25 @@ def sortZeroesToLeftAndMerge(grid):
 
 
 def goLeft(grid):
-    grid = sortZeroesToLeftAndMerge(grid)
+    grid = sortNonZeroValuesToTheLeftAndMerge(grid)
     return grid
 
 
 def goRight(grid):
-    grid = sortZeroesToRightAndMerge(grid)
+    grid = sortNonZeroValuesToTheRightAndMerge(grid)
     return grid
 
 
 def goUp(grid):
     grid = transpose(grid)
-    grid = sortZeroesToLeftAndMerge(grid)
+    grid = sortNonZeroValuesToTheLeftAndMerge(grid)
     grid = transpose(grid)
     return grid
 
 
 def goDown(grid):
     grid = transpose(grid)
-    grid = sortZeroesToRightAndMerge(grid)
+    grid = sortNonZeroValuesToTheRightAndMerge(grid)
     grid = transpose(grid)
     return grid
 
